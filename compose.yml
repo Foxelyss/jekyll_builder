@@ -1,0 +1,12 @@
+services:
+  jekyll-builder:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USER=${USER}
+    volumes:
+      - ./site:/app/site:z
+      - ./cache:/app/cache:z
+    ports:
+      - 4000:4000
